@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        let intervalId;
+
+        const sayDate = function(str) {
+            console.log(str, Date.now());
+        };
+
+        document.querySelector("#start").addEventListener("click", function() {
+            if (!intervalId) {  // Prevent multiple intervals if button is clicked multiple times
+                intervalId = setInterval(sayDate, 1000, "hi");
+            }
+        });
+
+        document.querySelector("#stop").addEventListener("click", function() {
+            clearInterval(intervalId);
+            intervalId = null; // Reset intervalId so it can be started again
+        });
+    </script>
+</body>
+</html>
