@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub API Example</title>
+</head>
+<body style="background-color: #c39f9f;">
+    <div id="container">
+        <!-- Placeholder for the image -->
+    </div>
+
+    <script>
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                console.log(data.followers);
+
+                // Create a new img element
+                const img = document.createElement('img');
+                img.src = data.avatar_url; // Set the correct image URL from the API response
+                
+
+                // Append the img element to an existing container or create a new div
+                const container = document.getElementById('container');
+                container.appendChild(img);
+            }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>
