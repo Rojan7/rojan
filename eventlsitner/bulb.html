@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="2.jpg" alt="" id="image1">
+    
+</body>
+<script>
+   
+        document.getElementById('image1').addEventListener('click', function() {
+            let image = document.getElementById('image1');
+            if (image.src.includes('2.jpg')) {
+                image.src = 'glowing-and-turned-off-light-bulb-vector-610001.jpg';
+            } else {
+                image.src = '2.jpg';
+            }
+        });
+
+
+</script>
+
+</html>
